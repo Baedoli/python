@@ -32,5 +32,15 @@ for each_item in movies1:
     else:
         print(each_item)
 
+def print_arry (list_arry):
+
+    for each_item in list_arry:
+        if isinstance(each_item,list):
+            print_arry(each_item)
+        else:
+            print(each_item)
+
+print_arry(movies1)
+
 
 
