@@ -5,6 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import model_selection
 from sklearn import metrics
 import csv
+import os
 
 data_path ="/Users/baeseongho/webdriver/corpus.txt"
 data = open(data_path, encoding='utf8').read()
@@ -40,18 +41,18 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(trainDF["tex
 print(X_train.shape)
 print(X_test.shape)
 
-'''
-Feature 생성
-'''
+#'''
+#Feature 생성
+#'''
 count_vect = CountVectorizer(analyzer='word', token_pattern=r'\w{1,}')
 count_vect.fit(X_train)
 xtrain_count =  count_vect.transform(X_train)
 xvalid_count =  count_vect.transform(X_test)
 
 
-'''
-Modeling
-'''
+#'''
+#Modeling
+#'''
 from sklearn.tree import DecisionTreeClassifier
 
 names = ["Logistic Regression", "Decision Tree"]
@@ -73,12 +74,9 @@ for name, clf in zip(names, classifiers):
     print("F1-score:", precision)
     performances.append([name,acc, precision, recall,f1])
 
+print(performances)
 
- print(performances)
-
-
- import os
- print(os.getcwd())
+print(os.getcwd())
 
 with open(os.getcwd()+'/count_vec_result.csv','w') as out:
     csv_out=csv.writer(out)

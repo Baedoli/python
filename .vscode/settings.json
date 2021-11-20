@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3"
+    "python.pythonPath": "/usr/local/bin/python3",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace"
 }
