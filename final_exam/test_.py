@@ -53,6 +53,7 @@ train_x, test_x, y_train, y_test = model_selection.train_test_split(dataset_df['
 # 여기서 한글 처리 해결 해야 함. vect 처리 말고 다른 방향으로 생각 해야 함.
 count_vect = CountVectorizer()
 count_vect.fit(dataset_df['text'])
+
 X_train = count_vect.transform(train_x)
 X_test = count_vect.transform(test_x)
 

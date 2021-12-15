@@ -1,3 +1,7 @@
+
+# https://www.lucypark.kr/courses/2015-dm/text-mining.html
+
+import numpy
 import numpy as np
 import pandas as pd
 from sklearn import model_selection
@@ -14,6 +18,7 @@ from sklearn import model_selection
 from sklearn.tree import DecisionTreeClassifier
 import os
 import csv
+
 
 data_path = '/Users/baeseongho/webdriver/review_list_1.csv'
 df = pd.read_csv(data_path)
@@ -96,3 +101,11 @@ with open(os.getcwd()+'/count_vec_result.csv','w') as out:
     csv_out.writerow(['algorithm','accuracy', 'precision', 'recall', 'f1-score', ])
     for per in performances:
         csv_out.writerow(per)
+
+
+
+
+
+
+
+
